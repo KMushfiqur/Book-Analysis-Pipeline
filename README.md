@@ -1,72 +1,55 @@
-# Book Analysis — Parallel Data Processing (Final Project)
+Book Analysis Pipeline: Distributed Data Processing and Recommendation System
 
-**Overview**
-- Java + Apache Spark project that performs dataset filtering, PageRank on a book-user graph, and KNN-based book recommendations.
-- The orchestrator is `BookAnalysis` which runs filtering, PageRank, and KNN recommendation steps.
+Project Overview
 
-**Important source files**
-- `java/BookAnalysis.java` — main entry point and orchestration ([java/BookAnalysis.java](java/BookAnalysis.java#L1-L400)).
-- `java/PageRankAnalysis.java` — builds graph and runs PageRank ([java/PageRankAnalysis.java](java/PageRankAnalysis.java#L1-L400)).
-- `java/KNNBookRecommendation.java` — KNN recommender helpers ([java/KNNBookRecommendation.java](java/KNNBookRecommendation.java#L1-L400)).
-- `java/DataFilter.java`, `java/Timer.java` — helpers used by the pipeline.
+This project implements a distributed data processing pipeline for analyzing book ratings and generating personalized book recommendations. Leveraging Apache Spark, the system efficiently processes large datasets of book information and user ratings to uncover insights and provide intelligent recommendations. It showcases expertise in big data technologies, distributed computing, and the development of recommendation algorithms.
 
-**Data files**
-- Example CSVs: `books.csv`, `ratings.csv`, `users.csv` in the project root. Some code uses S3 paths by default.
+Key Features
 
-**Prerequisites**
-- Java 8 (or compatible JDK matching project settings)
-- Maven (to build the shaded/fat JAR)
-- Apache Spark 3.x installed (or use the spark-submit binary bundled with your Spark distribution)
-- GraphFrames package compatible with your Spark/Scala version
-- AWS credentials set in the environment if you plan to read/write the S3 paths used by the code
+•
+Distributed Data Processing: Utilizes Apache Spark to handle and process large-scale book and rating datasets, demonstrating proficiency in big data technologies.
 
-**Build**
-1. From the project root run:
+•
+Data Filtering and Preprocessing: Implements efficient data filtering mechanisms to refine raw rating data, ensuring high-quality input for subsequent analysis.
 
-```
-mvn clean package
-```
+•
+PageRank Analysis for Book Influence: Applies the PageRank algorithm to identify influential books within the dataset, providing a novel approach to understanding book popularity and impact.
 
-This produces a shaded JAR in `target/` (the POM config adds `BookAnalysis` as the manifest main class).
+•
+K-Nearest Neighbors (KNN) Recommendation System: Develops a KNN-based algorithm to generate personalized book recommendations for users, showcasing skills in machine learning and collaborative filtering.
 
-**Run (recommended: spark-submit)**
-- Local quick run (uses local Spark master):
+•
+Performance Monitoring: Includes a custom Timer utility to measure and log the execution time of different stages of the pipeline, emphasizing performance optimization and efficiency.
 
-```
-spark-submit \
-  --class BookAnalysis \
-  --master local[4] \
-  --packages graphframes:graphframes:0.8.2-spark3.2-s_2.12 \
-  --conf spark.driver.memory=4g \
-  target/book-analysis-1.0.jar
-```
+•
+AWS S3 Integration: Configured to read input data from and write output results to Amazon S3, demonstrating experience with cloud storage solutions.
 
-- Notes:
-  - The code currently reads/writes to S3 paths like `s3://khan-final-project/...`. To run locally, either configure AWS credentials or edit `java/BookAnalysis.java` to point to local CSVs (`books.csv`, `ratings.csv`). See the file at [java/BookAnalysis.java](java/BookAnalysis.java#L1-L400).
-  - If GraphFrames is not available via `--packages`, add the GraphFrames JAR to Spark's classpath or use the correct `--packages` coordinate for your Spark/Scala version.
+Technical Architecture and Design
 
-**Running locally without S3**
-1. Edit `java/BookAnalysis.java` and replace the S3 paths with local paths, for example:
+The pipeline is built on a distributed computing framework, with Apache Spark at its core. This architecture allows for scalable processing of large datasets across a cluster of machines. The project is structured into distinct modules for data handling, PageRank analysis, and KNN recommendations, promoting modularity and maintainability.
 
-```
-    .csv("books.csv")
-    .csv("ratings.csv")
-```
+Technologies Used
 
-2. Build and run with the `spark-submit` example above. You can also uncomment the `.master("local[4]")` configuration in `BookAnalysis` for quick debugging.
+•
+Distributed Computing Framework: Apache Spark
 
-**Outputs**
-- PageRank results and recommendations are written to the S3 paths configured in the source code (or local paths if you changed them). The code also writes timing info to `output/timing.txt` (see the `Timer` usage).
-- The repository contains an `output files/` folder with example outputs produced previously.
+•
+Programming Language: Java
 
-**Troubleshooting / Tips**
-- If you see classpath or GraphFrames errors, confirm the GraphFrames package coordinate matches your Spark and Scala versions.
-- Increase `spark.driver.memory` and executor memory for large datasets.
-- To inspect results locally, write outputs to a local directory instead of S3 and open the CSVs with your preferred tool.
+•
+Cloud Storage: Amazon S3
 
-**Next steps / Improvements**
-- Add a small wrapper script to switch between S3 and local modes via environment variables.
-- Parameterize file paths, thresholds, and Spark configs via CLI args or a properties file.
+•
+Build Tool: Maven
 
-**License / Contact**
-- (Add license or contact info here as needed.)
+•
+Data Formats: CSV
+
+Design Philosophy and Technical Achievements
+
+This project was engineered to address the complexities of processing and analyzing large-scale datasets within a distributed environment. The design prioritizes efficiency and scalability, crucial for handling real-world data volumes in applications such as recommendation systems. By integrating cloud storage solutions and implementing advanced machine learning algorithms, the pipeline achieves robust data transformation and intelligent insight generation. This work underscores a commitment to building high-performance, maintainable systems capable of solving intricate data challenges.
+
+Author
+
+KMushfiqur
+
