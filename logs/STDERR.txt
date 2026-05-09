@@ -1,0 +1,99 @@
+Ivy Default Cache set to: /home/hadoop/.ivy2/cache
+The jars for the packages stored in: /home/hadoop/.ivy2/jars
+graphframes#graphframes added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-596742f5-7a4b-4652-9001-817dc312bc61;1.0
+	confs: [default]
+	found graphframes#graphframes;0.8.2-spark3.2-s_2.12 in spark-packages
+	found org.slf4j#slf4j-api;1.7.16 in central
+downloading https://repos.spark-packages.org/graphframes/graphframes/0.8.2-spark3.2-s_2.12/graphframes-0.8.2-spark3.2-s_2.12.jar ...
+	[SUCCESSFUL ] graphframes#graphframes;0.8.2-spark3.2-s_2.12!graphframes.jar (42ms)
+downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar ...
+	[SUCCESSFUL ] org.slf4j#slf4j-api;1.7.16!slf4j-api.jar (49ms)
+:: resolution report :: resolve 750ms :: artifacts dl 94ms
+	:: modules in use:
+	graphframes#graphframes;0.8.2-spark3.2-s_2.12 from spark-packages in [default]
+	org.slf4j#slf4j-api;1.7.16 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   2   |   2   |   2   |   0   ||   2   |   2   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-596742f5-7a4b-4652-9001-817dc312bc61
+	confs: [default]
+	2 artifacts copied, 0 already retrieved (281kB/7ms)
+25/12/09 08:18:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+25/12/09 08:18:54 WARN DependencyUtils: Skip remote jar s3://khan-final-project/book-analysis-1.0.jar.
+25/12/09 08:18:55 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at ip-172-31-45-173.us-west-2.compute.internal/172.31.45.173:8032
+25/12/09 08:18:56 INFO Configuration: resource-types.xml not found
+25/12/09 08:18:56 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+25/12/09 08:18:56 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (12288 MB per container)
+25/12/09 08:18:56 INFO Client: Will allocate AM container, with 2432 MB memory including 384 MB overhead
+25/12/09 08:18:56 INFO Client: Setting up container launch context for our AM
+25/12/09 08:18:56 INFO Client: Setting up the launch environment for our AM container
+25/12/09 08:18:56 INFO Client: Preparing resources for our AM container
+25/12/09 08:18:56 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+25/12/09 08:19:33 INFO Client: Uploading resource file:/mnt/tmp/spark-130c678e-2318-446e-b482-8674f57cc3f4/__spark_libs__2841290466355072156.zip -> hdfs://ip-172-31-45-173.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1765268001987_0001/__spark_libs__2841290466355072156.zip
+25/12/09 08:19:35 INFO Client: Uploading resource s3://khan-final-project/book-analysis-1.0.jar -> hdfs://ip-172-31-45-173.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1765268001987_0001/book-analysis-1.0.jar
+25/12/09 08:19:38 INFO Client: Uploading resource file:/home/hadoop/.ivy2/jars/graphframes_graphframes-0.8.2-spark3.2-s_2.12.jar -> hdfs://ip-172-31-45-173.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1765268001987_0001/graphframes_graphframes-0.8.2-spark3.2-s_2.12.jar
+25/12/09 08:19:38 INFO Client: Uploading resource file:/home/hadoop/.ivy2/jars/org.slf4j_slf4j-api-1.7.16.jar -> hdfs://ip-172-31-45-173.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1765268001987_0001/org.slf4j_slf4j-api-1.7.16.jar
+25/12/09 08:19:38 INFO Client: Uploading resource file:/etc/hudi/conf.dist/hudi-defaults.conf -> hdfs://ip-172-31-45-173.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1765268001987_0001/hudi-defaults.conf
+25/12/09 08:19:38 INFO Client: Uploading resource file:/mnt/tmp/spark-130c678e-2318-446e-b482-8674f57cc3f4/__spark_conf__1459362572742979499.zip -> hdfs://ip-172-31-45-173.us-west-2.compute.internal:8020/user/hadoop/.sparkStaging/application_1765268001987_0001/__spark_conf__.zip
+25/12/09 08:19:38 INFO SecurityManager: Changing view acls to: hadoop
+25/12/09 08:19:38 INFO SecurityManager: Changing modify acls to: hadoop
+25/12/09 08:19:38 INFO SecurityManager: Changing view acls groups to: 
+25/12/09 08:19:38 INFO SecurityManager: Changing modify acls groups to: 
+25/12/09 08:19:38 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: hadoop; groups with view permissions: EMPTY; users with modify permissions: hadoop; groups with modify permissions: EMPTY
+25/12/09 08:19:38 INFO Client: Submitting application application_1765268001987_0001 to ResourceManager
+25/12/09 08:19:39 INFO YarnClientImpl: Submitted application application_1765268001987_0001
+25/12/09 08:19:40 INFO Client: Application report for application_1765268001987_0001 (state: ACCEPTED)
+25/12/09 08:19:40 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: root.default
+	 start time: 1765268379015
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-45-173.us-west-2.compute.internal:20888/proxy/application_1765268001987_0001/
+	 user: hadoop
+25/12/09 08:19:48 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:19:48 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: ip-172-31-45-87.us-west-2.compute.internal
+	 ApplicationMaster RPC port: 33041
+	 queue: root.default
+	 start time: 1765268379015
+	 final status: UNDEFINED
+	 tracking URL: http://ip-172-31-45-173.us-west-2.compute.internal:20888/proxy/application_1765268001987_0001/
+	 user: hadoop
+25/12/09 08:20:18 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:20:48 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:21:18 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:21:48 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:22:18 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:22:48 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:23:18 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:23:48 INFO Client: Application report for application_1765268001987_0001 (state: RUNNING)
+25/12/09 08:24:02 INFO Client: Application report for application_1765268001987_0001 (state: FINISHED)
+25/12/09 08:24:02 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: ip-172-31-45-87.us-west-2.compute.internal
+	 ApplicationMaster RPC port: 33041
+	 queue: root.default
+	 start time: 1765268379015
+	 final status: SUCCEEDED
+	 tracking URL: http://ip-172-31-45-173.us-west-2.compute.internal:20888/proxy/application_1765268001987_0001/
+	 user: hadoop
+25/12/09 08:24:02 INFO ShutdownHookManager: Shutdown hook called
+25/12/09 08:24:02 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-130c678e-2318-446e-b482-8674f57cc3f4
+25/12/09 08:24:02 INFO ShutdownHookManager: Deleting directory /mnt/tmp/spark-cee814c0-4e77-47c8-b4ac-7a02aca9cbf3
+25/12/09 08:24:02 INFO MetricsSystemImpl: Stopping s3a-file-system metrics system...
+25/12/09 08:24:02 INFO MetricsSystemImpl: s3a-file-system metrics system stopped.
+25/12/09 08:24:02 INFO MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
+Command exiting with ret '0'

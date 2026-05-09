@@ -1,0 +1,50 @@
+2025-12-09T08:18:48.163234958Z INFO Ensure step 1 jar file command-runner.jar
+2025-12-09T08:18:48.183015191Z INFO Running step with ProcessBuilder
+2025-12-09T08:18:48.185785694Z INFO StepRunner: Created Runner for step 1
+INFO startExec 'hadoop jar /var/lib/aws/emr/step-runner/hadoop-jars/command-runner.jar spark-submit --deploy-mode cluster --packages graphframes:graphframes:0.8.2-spark3.2-s_2.12 s3://khan-final-project/book-analysis-1.0.jar'
+INFO Environment:
+  PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/aws/puppet/bin/:/opt/puppetlabs/bin
+  INVOCATION_ID=969aa20d88b545bbb0e7136ec537dc0b
+  SECURITY_PROPERTIES=/emr/instance-controller/lib/security.properties
+  HISTCONTROL=ignoredups
+  MANPATH=:/opt/puppetlabs/puppet/share/man
+  PIDFILE=/emr/instance-controller/run/instance-controller.pid
+  HISTSIZE=1000
+  HADOOP_ROOT_LOGGER=INFO,DRFA
+  AWS_DEFAULT_REGION=us-west-2
+  JAVA_HOME=/etc/alternatives/jre
+  BASH_FUNC_which%%=() {  ( alias; eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot "$@"}
+  LANG=en_US.UTF-8
+  JOURNAL_STREAM=8:23100
+  MAIL=/var/spool/mail/hadoop
+  PLATFORM_TYPE=EMR_ON_EC2
+  which_declare=declare -f
+  LOGNAME=hadoop
+  PWD=/
+  HADOOP_CLIENT_OPTS=-Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/s-1042394896YIKA3ETZY/tmp
+  _=/usr/lib/jvm/jre-17/bin/java
+  S_COLORS=auto
+  LESSOPEN=||/usr/bin/lesspipe.sh %s
+  SHELL=/bin/bash
+  JOB_IDENTIFIER=j-NLNSANT24YAY/s-1042394896YIKA3ETZY
+  USER=hadoop
+  GEM_HOME=/home/hadoop/.local/share/gem/ruby
+  HADOOP_LOGFILE=syslog
+  SYSTEMD_COLORS=false
+  HOSTNAME=ip-172-31-45-173.us-west-2.compute.internal
+  HADOOP_LOG_DIR=/mnt/var/log/hadoop/steps/s-1042394896YIKA3ETZY
+  SYSTEMD_EXEC_PID=4022
+  EMR_STEP_ID=s-1042394896YIKA3ETZY
+  SHLVL=0
+  HOME=/home/hadoop
+  HADOOP_IDENT_STRING=hadoop
+INFO redirectOutput to /mnt/var/log/hadoop/steps/s-1042394896YIKA3ETZY/stdout
+INFO redirectError to /mnt/var/log/hadoop/steps/s-1042394896YIKA3ETZY/stderr
+INFO Working dir /mnt/var/lib/hadoop/steps/s-1042394896YIKA3ETZY
+INFO ProcessRunner started child process 12547
+2025-12-09T08:18:48.192852691Z INFO HadoopJarStepRunner.Runner: startRun() called for s-1042394896YIKA3ETZY Child Pid: 12547
+INFO Synchronously wait child process to complete : hadoop jar /var/lib/aws/emr/step-runner/hadoop-...
+INFO waitProcessCompletion ended with exit code 0 : hadoop jar /var/lib/aws/emr/step-runner/hadoop-...
+INFO total process run time: 316 seconds
+2025-12-09T08:24:04.368268616Z INFO Step created jobs: 
+2025-12-09T08:24:04.370314927Z INFO Step succeeded with exitCode 0 and took 316 seconds
